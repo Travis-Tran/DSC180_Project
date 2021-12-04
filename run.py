@@ -14,35 +14,35 @@ from model import model_build
 
 
 def main(targets):
-    '''
+    """
     Runs the main project pipeline logic, given the targets.
     targets must contain: 'data', 'analysis', 'model'.
 
     `main` runs the targets in order of data=>analysis=>model.
-    '''
+    """
 
     env_setup.make_datadir()
-    env_setup.auth()
+
+    if 'test' in targets:
+        targets.extend(['data', 'features', 'model'])
 
     if 'data' in targets:
         with open('config/data-params.json') as fh:
             data_cfg = json.load(fh)
 
-        # make the data target
         data = get_data(**data_cfg)
 
     if 'features' in targets:
         with open('config/features-params.json') as fh:
             feats_cfg = json.load(fh)
 
-        feats, labels = apply_features(data, **feats_cfg)
+        feats = apply_features(data, **feats_cfg)
 
     if 'model' in targets:
         with open('config/model-params.json') as fh:
             model_cfg = json.load(fh)
 
-        # make the data target
-        model_build(feats, labels, **model_cfg)
+        model_build(feats, **model_cfg)
 
     return
 
