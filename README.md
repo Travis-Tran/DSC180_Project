@@ -2,8 +2,5 @@
 
 run "python run.py test"
 
-![Alt Text](https://tenor.com/view/bantal003-gif-21264279.gif)
 
-![Alt Text](https://tenor.com/view/kim-jennie-jennie-kim-blackpink-jennie-gif-19237529.gif)
-
-asdf
+<img src="https://tenor.com/view/bantal003-gif-21264279.gif" width="200" height="300" />

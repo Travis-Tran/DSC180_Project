@@ -1,9 +1,7 @@
 git add .
 
-echo 'Enter the commit message:'
-read commitMessage
-git commit -m'$commitMessage'
+echo "commit msg"
+read commit_msg
+git commit -m "$commit_msg"
 
 git push
-
-read
