@@ -26,10 +26,14 @@ def main(targets):
         targets.extend(['data', 'features', 'model'])
 
     if 'data' in targets:
+        # not needed
         with open('config/data-params.json') as fh:
             data_cfg = json.load(fh)
 
-        data = get_data(**data_cfg)
+        if 'test' in targets:
+            data = get_data('test')
+        else:
+            data = get_data('data/raw')
 
     if 'features' in targets:
         with open('config/features-params.json') as fh:
