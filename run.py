@@ -9,7 +9,6 @@ sys.path.insert(0, 'src')
 import env_setup
 from etl import get_data
 from features import apply_features
-
 from model import model_build
 
 

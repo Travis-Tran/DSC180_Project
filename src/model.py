@@ -33,7 +33,6 @@ def model_build(
         ('mdl', mdl)
     ])
 
-    print(X_train)
     pl.fit(X_train)
     predictions = pl.predict(X_test)
     out = pd.DataFrame(pd.Series(predictions))
