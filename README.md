@@ -15,7 +15,7 @@ run full data: "python run.py data features model"
 - scipy/ml pod: launch-scipy-ml.sh 
 
 - dockerImage pod: launch.sh -i user/image  (e.g. hmasudat/dsc180_docker)
-  - still on home dir
-  - can access JupyterNotebook on campus network/VPN
 
+  - still on home dir
+  - can access JupyterNotebook via campus network/VPN
 
