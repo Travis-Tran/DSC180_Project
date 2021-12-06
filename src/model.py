@@ -35,7 +35,7 @@ def model_build(
 
     pl.fit(X_train)
     predictions = pl.predict(X_test)
-    out = pd.DataFrame(pd.Series(predictions))
+    out = pd.DataFrame({'predictions': predictions})
 
     out.to_csv(predictions_fp, index=False)
     joblib.dump(pl, mdl_fp, compress=1)
