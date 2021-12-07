@@ -50,7 +50,7 @@ def getFeatures(gdf):
     return [json.loads(gdf.to_json())['features'][0]['geometry']]
 
 
-def deez_nuts(long, lat):
+def geo_dataframe(long, lat):
     output = []
 
     minx, miny = lat, long
@@ -88,5 +88,3 @@ def deez_nuts(long, lat):
     print('The label for this region is ' + str(output[0]))
     print('The sum of non-flat surface in this region is ' + str(output[1]))
     return output
-
-
