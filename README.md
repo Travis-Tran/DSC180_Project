@@ -1,23 +1,22 @@
 # DSC180 - WIFIRE
 
-### **RUN**
+### **BUILD INSTRUCTIONS**
 
-run test data: "python run.py test"
+- First run the docker file
+  - RUN: launch-scipy-ml.sh -i hmasudat/dsc180_docker -P Always
+- To run test data do the following
+  - RUN: python run.py test
+- (still under development) To run all data do the following
+  - RUN: python run.py data features model
 
-run full data: "python run.py data features model"
 
-### **DSMLP**
+### **HOW TO CONNECT TO DSMLP**
+- SSH into DSMLP (logs you into home dir in jump box)
+  - RUN: ssh \<user>@dsmlp-login.ucsd.edu
+- Open a pod
+  - scipy/ml pod: launch-scipy-ml.sh
+  - dockerImage pod: launch.sh -i \<user>/\<image>  (e.g. hmasudat/dsc180_docker)
 
-
-- ssh user@dsmlp-login.ucsd.edu 
-  - logs into home dir in jump box
-
-- scipy/ml pod: launch-scipy-ml.sh 
-
-- dockerImage pod: launch.sh -i user/image  (e.g. hmasudat/dsc180_docker)
-
-  - still on home dir
-  - can access JupyterNotebook via campus network/VPN
 
 ## Abstract
 

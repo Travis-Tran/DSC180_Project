@@ -1,4 +1,4 @@
 {
-  "dockerhub-id": "hmasudat/dsc180_docker",
-  "build-script": "python run.py test"
+  "GitHub Repository": "https://github.com/hiroki-mtg/DSC180_Project",
+  "DockerHub Repository": "https://hub.docker.com/repository/docker/hmasudat/dsc180_docker"
 }
