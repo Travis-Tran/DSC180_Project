@@ -10,6 +10,7 @@
 ### **Build Instructions**
 - Run docker image (If you haven't already done so)
   - launch.sh -i hmasudat/dsc180_docker
+  - (alternative): launch-scipy-ml.sh -i <image-fullname> -P Always
 - To run test data do the following
   - RUN: python run.py test
 - (still under development) To run all data do the following
