@@ -8,7 +8,7 @@
   - dockerImage pod: launch.sh -i \<user>/\<image>  (e.g. hmasudat/dsc180_docker)
 
 ### **Build Instructions**
-- Run docker image (If you haven't already done so)
+- Run docker image to launch a pod (If you haven't already done so)
   - launch.sh -i hmasudat/dsc180_docker
   - (alternative): launch-scipy-ml.sh -i hmasudat/dsc180_docker -P Always
 - To run test data do the following
