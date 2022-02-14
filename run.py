@@ -26,25 +26,28 @@ def main(targets):
         targets.extend(['data', 'features', 'model'])
 
     if 'data' in targets:
-        # not needed
         with open('config/data-params.json') as fh:
             data_cfg = json.load(fh)
 
-        if 'test' in targets:
-            data = get_data('test')
+        if 'pull' in targets:
+            if 'test' in targets:
+                data = get_data('test', data_cfg['points'], pull=True)
+            else:
+                data = get_data('data/raw', data_cfg['points'], pull=True)
         else:
-            data = get_data('data/raw')
+            if 'test' in targets:
+                data = get_data('test', data_cfg['points'])
+            else:
+                data = get_data('data/raw', data_cfg['points'])
 
     if 'features' in targets:
         with open('config/features-params.json') as fh:
             feats_cfg = json.load(fh)
-
         feats = apply_features(data, **feats_cfg)
 
     if 'model' in targets:
         with open('config/model-params.json') as fh:
             model_cfg = json.load(fh)
-
         model_build(feats, **model_cfg)
 
     return

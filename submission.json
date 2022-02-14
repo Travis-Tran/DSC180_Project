@@ -1,4 +1,0 @@
-{
-  "dockerhub-id": "hmasudat/dsc180_docker",
-  "build-script": "python run.py test"
-}
