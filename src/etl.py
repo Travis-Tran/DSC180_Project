@@ -1,7 +1,6 @@
 import os
 import fastfuels
 import pickle
-import pprint
 
 
 def get_data(outdir, points, pull=False):
@@ -11,10 +10,10 @@ def get_data(outdir, points, pull=False):
     basedir = os.path.dirname(__file__)
 
     if outdir == 'test':
-        points = points[:1]
-        data_loc = os.path.join(basedir, '..', 'data', 'raw', 'train.pkl')
-    if outdir == 'data/raw':
+        points = points[:3]
         data_loc = os.path.join(basedir, '..', 'test', 'test.pkl')
+    if outdir == 'data/raw':
+        data_loc = os.path.join(basedir, '..', 'data', 'raw', 'train.pkl')
 
     if pull:
         fio = fastfuels.open('https://wifire-data.sdsc.edu:9000/fastfuels/index.fio', ftype='s3')
@@ -38,7 +37,6 @@ def get_data(outdir, points, pull=False):
     # read
     pkl_file = open(data_loc, 'rb')
     data1 = pickle.load(pkl_file)
-    # pprint.pprint(data1)
     pkl_file.close()
 
     return data1
