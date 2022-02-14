@@ -29,3 +29,6 @@ Fuel data has traditionally been collected through surveys recurring every two y
 
 With this new data source, we can consider different methods to predict and classify fuel types in order to provide accurate insight into proactive fire fighting methods. One proactive wildfire fighting method is using prescribed fires, fires that are safely controlled, to consume built-up fuel. However, this method is most effective with location-based information on fuels in order to mitigate the most risk and damage of wildfires.
 Out of the different machine learning classifiers, we believe that a clustering algorithm will perform the best in identifying patterns in the multi-feature data and classifying fuel types. Therefore, our plan for this quarter is to implement a clustering algorithm that can accurately predict the fuel type of each voxel, using a variety of data sources including both FastFuels raw values and LandFire labelling.
+
+### **Code**
+
