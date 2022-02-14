@@ -19,6 +19,13 @@
 - model: runs model
 - pull: pulls raw data from FastFuels (slow)
 
+### **Pipeline**
+Data is pulled from the Fastfuels API and extracted as raw data content. 
+PCA dimensionality reduction is performed on the raw data.
+These PCA reduced features are then stored as temporary data.
+Temporary feature data is then put into a KMeans clustering model where 
+it is trained and tested, resulting in an output of predicted data. 
+
 ## Abstract
 
 The Congressional Research Services released a report with wildfire statistics, detailing a historical trend in increasing wildfire activity along with the negative impacts they cause. In 2020, 59 wildfires burned over 10 million acres of land, which is a significant increase from previous years. There are a variety of environmental changes that contribute to increasing wildfire impacts, most notably climate change. Due to the warmer and drier conditions combined with long drought periods, the wildfire season durations have increased from four to at least 6 months.
