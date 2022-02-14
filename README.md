@@ -2,18 +2,22 @@
 
 ### **How to Connect to DSMLP**
 - SSH into DSMLP (logs you into home dir in jump box)
-  - RUN: ssh \<user>@dsmlp-login.ucsd.edu
+  - ssh \<user>@dsmlp-login.ucsd.edu
 - Open a pod
   - scipy/ml pod: launch-scipy-ml.sh
   - dockerImage pod: launch.sh -i \<user>/\<image>  (e.g. hmasudat/dsc180_docker)
 
 ### **Build Instructions**
-- Run docker image to launch a pod (If you haven't already done so)
-  - launch.sh -i hmasudat/dsc180_docker
-- To run test data do the following
-  - RUN: python run.py test
-- (still under development) To run all data do the following
-  - RUN: python run.py data features model
+- Docker/Pod: launch.sh -i hmasudat/dsc180_docker
+- Test: python run.py test
+- All: python run.py data features model
+- *if there is no raw data, add target "pull"*
+
+### **Targets**
+- data: reads raw data
+- features: creates features
+- model: runs model
+- pull: pulls raw data from FastFuels (slow)
 
 ## Abstract
 
