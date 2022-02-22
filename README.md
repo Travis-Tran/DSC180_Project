@@ -13,7 +13,7 @@
 - All: python run.py data features model
 - *if there is no raw data, add target "pull"*
 
-### **Targets**
+### **Build Targets**
 - data: reads raw data
 - features: creates features
 - model: runs model
