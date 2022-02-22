@@ -38,4 +38,4 @@ With this new data source, we can consider different methods to predict and clas
 Out of the different machine learning classifiers, we believe that a clustering algorithm will perform the best in identifying patterns in the multi-feature data and classifying fuel types. Therefore, our plan for this quarter is to implement a clustering algorithm that can accurately predict the fuel type of each voxel, using a variety of data sources including both FastFuels raw values and LandFire labelling.
 
 ### Code
-
+![Flow Map of Model](DSC180b_flow_map.png)
