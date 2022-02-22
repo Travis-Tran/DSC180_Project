@@ -39,4 +39,4 @@ Out of the different machine learning classifiers, we believe that a clustering 
 
 ### Code
 ![Flow Map of Model](DSC180b_flow_map_pt1.png)
-!(DSC180b_flow_map_pt2.png)
+![Flow Map of Model pt2](DSC180b_flow_map_pt2.png)
