@@ -31,14 +31,14 @@ def main(targets):
 
         if 'pull' in targets:
             if 'test' in targets:
-                data = get_data('test', data_cfg['points'], pull=True)
+                data = get_data('test', pull=True)
             else:
-                data = get_data('data/raw', data_cfg['points'], pull=True)
+                data = get_data('data/raw', pull=True)
         else:
             if 'test' in targets:
-                data = get_data('test', data_cfg['points'])
+                data = get_data('test')
             else:
-                data = get_data('data/raw', data_cfg['points'])
+                data = get_data('data/raw')
 
     if 'features' in targets:
         with open('config/features-params.json') as fh:

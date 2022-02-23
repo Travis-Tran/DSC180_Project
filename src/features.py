@@ -15,7 +15,7 @@ def apply_features(raw_sav_data_list, outfile=None):
         table = pd.DataFrame()
         table['numbers'] = reduced
 
-        return [table['numbers'].sum(), table['numbers'].mean()]
+        return [table['numbers'].mean(), table['numbers'].std()]
 
     dim_red_data = [dimensionality_reduction(x) for x in raw_sav_data_list]
     X = np.array(dim_red_data)

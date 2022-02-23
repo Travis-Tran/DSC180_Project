@@ -3,7 +3,7 @@ import fastfuels
 import pickle
 
 
-def get_data(outdir, points, pull=False):
+def get_data(outdir, pull=False):
     """
     get data for train or test
     """
@@ -26,7 +26,14 @@ def get_data(outdir, points, pull=False):
             raw_sav_data = roi.data_dict['sav']
             return raw_sav_data
 
-        for lat, lon in points:
+        # NEW
+        list_coord = []
+        for lon in range(-106 * 10, -96 * 10):
+            for lat in range(32 * 10, 46 * 10):
+                list_coord.append([lat / 10, lon / 10])
+        list_coord = list_coord[:int(14000 / 400)]
+
+        for lat, lon in list_coord:
             raw_data.append((query_fast_fuels(lat, lon)))
 
         # write
