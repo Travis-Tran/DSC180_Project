@@ -4,20 +4,27 @@ from sklearn.decomposition import PCA
 
 
 def apply_features(raw_sav_data_list, outfile=None):
+    np.seterr(invalid='ignore')
+
     def dimensionality_reduction(raw_sav_data):
-        reduced = []
-        for i in range(raw_sav_data.shape[0]):
-            pca = PCA(n_components=1)
-            pca_val = pca.fit_transform(raw_sav_data[i])
-            # print(pca.explained_variance_ratio_)
-            reduced.append(pca_val.mean())
+        # new
+        columns = []
+        for x in raw_sav_data:
+            for cols in x:
+                columns.append(cols)
 
-        table = pd.DataFrame()
-        table['numbers'] = reduced
+        pca = PCA(n_components=1)
+        pca_val = pca.fit_transform(columns)
 
-        return [table['numbers'].mean(), table['numbers'].std()]
+        # mean
+        for i, cols in enumerate(columns):
+            cols[cols == 0] = np.nan
+            z = np.nanmean(cols)
+            np.append(pca_val[i], z)
 
-    dim_red_data = [dimensionality_reduction(x) for x in raw_sav_data_list]
+        return pca_val
+
+    dim_red_data = [datum for x in raw_sav_data_list for datum in dimensionality_reduction(x)]
     X = np.array(dim_red_data)
 
     if outfile:
