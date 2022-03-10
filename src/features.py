@@ -7,7 +7,7 @@ def apply_features(raw_sav_data_list, outfile=None):
     np.seterr(invalid='ignore')
 
     def dimensionality_reduction(raw_sav_data):
-        # new
+        # pca
         columns = []
         for x in raw_sav_data:
             for cols in x:
@@ -17,12 +17,22 @@ def apply_features(raw_sav_data_list, outfile=None):
         pca_val = pca.fit_transform(columns)
 
         # mean
+        '''
         for i, cols in enumerate(columns):
             cols[cols == 0] = np.nan
             z = np.nanmean(cols)
             np.append(pca_val[i], z)
+        '''
 
-        return pca_val
+        # new
+        columns = []
+        for x in raw_sav_data:
+            for cols in x:
+                columns.append(cols)
+
+        features = [[raw_sav_data.mean(), raw_sav_data.std()] for x in columns]
+
+        return features
 
     dim_red_data = [datum for x in raw_sav_data_list for datum in dimensionality_reduction(x)]
     X = np.array(dim_red_data)
